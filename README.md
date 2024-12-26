@@ -16,25 +16,9 @@
 
 ## 📦 Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Intro-iu/hintly.git
-   ```
-
-2. Navigate into the project directory:
-   ```bash
-   cd hintly
-   ```
-
-3. Build the project using Cargo:
-   ```bash
-   cargo build --release
-   ```
-
-4. Install the executable:
-   ```bash
-   cargo install --path .
-   ```
+```bash
+cargo install --git https://github.com/Intro-iu/hintly.git
+```
 
 ## ⚙️ Configuration
 
