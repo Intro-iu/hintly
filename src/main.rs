@@ -3,8 +3,7 @@ mod client;
 use std::env;
 use std::io::Write;
 use clap::{Arg, Command};
-use clipboard::ClipboardContext;
-use clipboard::ClipboardProvider;
+use clipboard_rs::{Clipboard, ClipboardContext};
 
 fn run_operation(operation: &str, command: &str) {
     if operation == "r" || operation == "run" {
@@ -34,8 +33,8 @@ fn run_operation(operation: &str, command: &str) {
             println!("Error: {}", stderr);
         }
     } else if operation == "c" || operation == "copy" {
-        let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
-        ctx.set_contents(command.to_string()).unwrap();
+        let ctx = ClipboardContext::new().unwrap();
+        ctx.set_text(command.to_string()).unwrap();
     }
 }
 
