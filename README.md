@@ -81,7 +81,7 @@ hintly <prompt> [operation]
 ## 📦 Dependencies
 
 - [**clap**](https://crates.io/crates/clap): Used for building the CLI interface.
-- [**clipboard**](https://crates.io/crates/clipboard): Provides functionality to interact with the system clipboard.
+- [**clipboard-rs**](https://crates.io/crates/clipboard-rs): Provides functionality to interact with the system clipboard.
 - [**reqwest**](https://crates.io/crates/reqwest): Used for making HTTP requests to the API.
 - [**serde**](https://crates.io/crates/serde) and [**serde_json**](https://crates.io/crates/serde_json): For serializing and deserializing configuration and API request/response data.
 - [**tokio**](https://crates.io/crates/tokio): Async runtime for handling asynchronous tasks.
