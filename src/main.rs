@@ -40,7 +40,7 @@ fn run_operation(operation: &str, command: &str) {
 
 #[tokio::main]
 async fn main() {
-    let config = utils::check_and_create_config().unwrap();
+    let config = utils::read_config().unwrap();
     let api_key = config.api_key;
     let base_url = config.base_url;
 

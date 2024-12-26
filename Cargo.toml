@@ -3,6 +3,11 @@ name = "hintly"
 version = "0.1.0"
 edition = "2021"
 
+[build-dependencies]
+dirs = "5.0.1"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8.19"
+
 [dependencies]
 clap = { version = "4.5.23", features = ["derive"] }
 clipboard-rs = "0.1.11"
