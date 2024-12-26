@@ -22,7 +22,7 @@ cargo install --git https://github.com/Intro-iu/hintly.git
 
 ## ⚙️ Configuration
 
-Upon the first run, `Hintly` will check for a configuration file. If it doesn't exist, it will create a `config.toml` file in your system's configuration directory:
+Upon installation, `Hintly` will try to create a configuration file named `config.toml` in your system's configuration directory if it doesn't exist:
 
 - On **Unix-based systems**: `~/.config/hintly/config.toml`
 - On **Windows**: `C:\Users\username\AppData\Roaming\hintly\config.toml`

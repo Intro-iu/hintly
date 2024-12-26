@@ -9,7 +9,7 @@ fn run_operation(operation: &str, command: &str) {
     if operation == "r" || operation == "run" {
         let os = env::consts::OS;
 
-        let shell; 
+        let shell;
         let run_flag;
 
         if os == "windows" {
@@ -20,21 +20,26 @@ fn run_operation(operation: &str, command: &str) {
             run_flag = "-c";
         }
 
-        let output = std::process::Command::new(shell)
+        // 使用spawn()来执行命令并直接输出到终端
+        let mut child = std::process::Command::new(shell)
             .arg(run_flag)
             .arg(command)
-            .output()
+            .stdout(std::process::Stdio::inherit())
+            .stderr(std::process::Stdio::inherit())
+            .spawn()
             .expect("Failed to execute command");
-        
-        if output.status.success() {
+
+        let status = child.wait().expect("Failed to wait on child");
+
+        if status.success() {
             println!("Command executed successfully.");
         } else {
-            let stderr = String::from_utf8_lossy(&output.stderr);
-            println!("Error: {}", stderr);
+            println!("Command failed with status: {}", status);
         }
     } else if operation == "c" || operation == "copy" {
         let ctx = ClipboardContext::new().unwrap();
         ctx.set_text(command.to_string()).unwrap();
+        println!("Copied to clipboard: {}", command);
     }
 }
 
