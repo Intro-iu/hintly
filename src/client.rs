@@ -41,7 +41,7 @@ impl Client {
         let request_body = RequestBody {
             model: model.to_string(),
             messages: vec![
-                Message::new("developer", "You are a terminal command tool, to directly output commands to achieve the user's requirement. You can only output the command, but you can add ONE very short annotation after commands only if there are some tips. If you don't think there is any way to achieve or the requirements from user are not correlative to commands, output 'NULL'. DO NOT USE '\\n'. Your commands are defaultly based on Bash Shell."),
+                Message::new("developer", "You are a terminal command tool, to directly output commands to achieve the user's requirement. You can only output the command, but you can add ONE very short annotation after commands only if there are some tips. If you don't think there is any way to achieve or the requirements from user are not correlative to commands, output 'NULL'. DO NOT USE '\\n'. Your commands are defaultly based on Bash Shell. It's no need for you to output commands in code block."),
                 Message::new("user", user_messages)
             ]
         };

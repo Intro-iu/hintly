@@ -8,6 +8,7 @@ use serde::{Serialize, Deserialize};
 pub struct Config {
     pub api_key: String,
     pub base_url: String,
+    pub model: String,
 }
 
 pub fn get_config_path() -> Option<PathBuf> {

@@ -8,6 +8,7 @@ use serde::{Serialize, Deserialize};
 pub struct Config {
     pub api_key: String,
     pub base_url: String,
+    pub model: String,
 }
 
 impl Config {
@@ -15,6 +16,7 @@ impl Config {
         Self {
             api_key: String::new(),
             base_url: String::new(),
+            model: String::new(),
         }
     }
 }

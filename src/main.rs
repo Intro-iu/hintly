@@ -20,7 +20,6 @@ fn run_operation(operation: &str, command: &str) {
             run_flag = "-c";
         }
 
-        // 使用spawn()来执行命令并直接输出到终端
         let mut child = std::process::Command::new(shell)
             .arg(run_flag)
             .arg(command)
@@ -48,11 +47,10 @@ async fn main() {
     let config = utils::read_config().unwrap();
     let api_key = config.api_key;
     let base_url = config.base_url;
+    let model = config.model;
 
 
     let client = client::Client::new(api_key, base_url);
-
-    let model = "qwen-max";
 
     let matches = Command::new("hintly")
         .version("0.1.0")
@@ -69,7 +67,7 @@ async fn main() {
         .get_matches();
 
     if let Some(prompt) = matches.get_one::<String>("prompt") {
-        let command = client.chat(model, prompt).await.unwrap();
+        let command = client.chat(&model, &prompt).await.unwrap();
         println!("Hint: {}", command);
 
         if let Some(operation) = matches.get_one::<String>("operation") {
