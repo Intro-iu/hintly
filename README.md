@@ -27,10 +27,11 @@ Upon installation, `Hintly` will try to create a configuration file named `confi
 - On **Unix-based systems**: `~/.config/hintly/config.toml`
 - On **Windows**: `C:\Users\username\AppData\Roaming\hintly\config.toml`
 
-The configuration file contains two key fields:
+The configuration file contains three key fields:
 
 - `api_key`: Your API key to access the service (e.g., OpenAI API or similar).
 - `base_url`: The base URL for the API.
+- `model`: The model that you wanna use (e.g., GPT-4).
 
 The tool will prompt you to enter these values if the configuration file is not present.
 
